@@ -5,14 +5,12 @@
 export const environment = {
   production: false,
   firebaseConfig: {
-    apiKey: "AIzaSyDTDKpzFJNcxGHH2Fuf3IYH4ccr23PzaE8",
-    authDomain: "bookstore-e9ab0.firebaseapp.com",
-    databaseURL: "https://bookstore-e9ab0-default-rtdb.firebaseio.com",
-    projectId: "bookstore-e9ab0",
-    storageBucket: "bookstore-e9ab0.appspot.com",
-    messagingSenderId: "23929507228",
-    appId: "1:23929507228:web:608a9d576e84413cb14c59",
-    measurementId: "G-7ZSN6N2SCR"
+    apiKey: "AIzaSyApqF3clg2TM9LZk17dtORqlbC5iOz1dCU",
+    authDomain: "bookstore-d18be.firebaseapp.com",
+    projectId: "bookstore-d18be",
+    storageBucket: "bookstore-d18be.appspot.com",
+    messagingSenderId: "179224839048",
+    appId: "1:179224839048:web:4c03cf9ccb8925ca67703d"
   }
 };
 
