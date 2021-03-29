@@ -1,5 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
 import { AngularFireStorage } from '@angular/fire/storage';
 
 import { finalize } from 'rxjs/operators';
@@ -16,6 +15,8 @@ import { AuthService } from '../../../services/auth.service';
 
 export class RegisterComponent implements OnInit {
 
+  @ViewChild('imageUser') inputImageUser : ElementRef;
+
   public email: string = '';
   public password: string = '';
   
@@ -23,7 +24,6 @@ export class RegisterComponent implements OnInit {
   urlImage: Observable<string>;
 
   constructor(
-    private router: Router,
     private authService: AuthService,
     private afStorage: AngularFireStorage,
   ){}
@@ -33,6 +33,13 @@ export class RegisterComponent implements OnInit {
   onRegister() {
     this.authService.registerUser(this.email, this.password)
       .then((res) => {
+        this.authService.isAuth().subscribe(user=> {
+          if (user) {
+            user.updateProfile({
+              photoURL: this.inputImageUser.nativeElement.value
+            });
+          }
+        });
         this.authService.loginRedirect();
       }).catch(err => console.log('err', err.message));
   }
