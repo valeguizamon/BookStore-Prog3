@@ -6,9 +6,6 @@ import firebase from 'firebase/app';
 
 import { map } from 'rxjs/operators';
 
-
-
-
 @Injectable({
   providedIn: 'root'
 })
