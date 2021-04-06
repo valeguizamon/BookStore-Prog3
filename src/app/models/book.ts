@@ -1,4 +1,4 @@
-export interface BookInteface {
+export interface BookInterface {
     titulo?: string;
     idioma?: string;
     descripcion?: string;
