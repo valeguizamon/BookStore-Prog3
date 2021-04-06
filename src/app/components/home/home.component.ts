@@ -15,8 +15,9 @@ export class HomeComponent implements OnInit {
   public book = '';
 
   ngOnInit(): void {
-    this.dataApi.getBooks().subscribe(books =>{
+    this.dataApi.getAllBooks().subscribe(books =>{
       console.log('BOOKS', books);
+      this.books = books; 
     });
   }
 
