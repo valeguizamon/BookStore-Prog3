@@ -10,6 +10,7 @@ import { BookInterface } from '../../models/book';
   templateUrl: './details-book.component.html',
   styleUrls: ['./details-book.component.css']
 })
+
 export class DetailsBookComponent implements OnInit {
 
   constructor(private dataApi: DataApiService, private route: ActivatedRoute) { }
