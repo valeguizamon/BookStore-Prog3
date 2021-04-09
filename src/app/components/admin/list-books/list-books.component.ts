@@ -26,16 +26,15 @@ export class ListBooksComponent implements OnInit {
     });
   }
 
-  onDeleteBook(){
-    console.log('DELETE BOOK')
+  onDeleteBook(idBook: string){
+    const confirmacion = confirm('¿Esta seguro de querer borrar este libro?');
+    if(confirmacion){
+    this.dataApi.deleteBook(idBook);
+    }
   }
 
-  onUpdateBook(){
-    console.log('UPDATE BOOK')
-  }
-
-  onCreate(){
-    console.log('CREATE BOOK')
+  onPreUpdateBook(book: BookInterface){
+    this.dataApi.selectedBook = Object.assign({}, book);
   }
 
 }
