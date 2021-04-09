@@ -1,6 +1,5 @@
 import { ListBooksComponent } from './components/admin/list-books/list-books.component';
 import { DetailsBookComponent } from './components/details-book/details-book.component';
-import { HeroComponent } from './components/hero/hero.component';
 import { HomeComponent } from './components/home/home.component';
 import { ModalComponent } from './components/modal/modal.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
@@ -30,7 +29,6 @@ import { environment } from '../environments/environment';
     AppComponent,
     ListBooksComponent,
     DetailsBookComponent,
-    HeroComponent,
     HomeComponent,
     ModalComponent,
     NavbarComponent,

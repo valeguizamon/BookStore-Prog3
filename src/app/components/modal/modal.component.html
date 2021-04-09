@@ -13,6 +13,7 @@
       <div class="modal-body">
         <form #formBook="ngForm" name="formBook" (ngSubmit)="onSaveBook(formBook)">
           <input type="hidden" name="id" [(ngModel)]="this.dataApi.selectedBook.id">
+          <input type="hidden" name="userUid" [value]="userUid">
           <div class="form-group">
             <label for="titulo" class="col-form-label">Titulo: </label>
             <input type="text" class="form-control" name="titulo" [(ngModel)]="this.dataApi.selectedBook.titulo">
@@ -38,8 +39,8 @@
             <div class="form-group col-md-6">
               <label for="oferta">Oferta:</label>
               <select name="oferta" class="form-control" [(ngModel)]="this.dataApi.selectedBook.oferta">
-                <option type="text" value="1">Sí</option>
-                <option type="text" value="0">No</option>
+                <option value="Sí">Sí</option>
+                <option value="No">No</option>
               </select>
             </div>
           </div>

@@ -8,4 +8,5 @@ export interface BookInterface {
     descripcion?: string;
     portada?: string;
     link_amazon?: string;
+    userUid?: string;
 }

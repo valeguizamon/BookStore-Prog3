@@ -1,9 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { AngularFireAuth } from '@angular/fire/auth';
 
 import { DataApiService } from '../../../services/data-api.service';
+import { AuthService } from '../../../services/auth.service';
 
 import { BookInterface } from '../../../models/book';
+import { UserInterface } from '../../../models/user';
 
 @Component({
   selector: 'app-list-books',
@@ -13,11 +16,25 @@ import { BookInterface } from '../../../models/book';
 export class ListBooksComponent implements OnInit {
   
   public books: BookInterface[];
+  public isAdmin: any = null;
+  public userUid: string = null;
 
-  constructor(private dataApi: DataApiService) {}
+  constructor(private dataApi: DataApiService, private authService: AuthService) {}
 
   ngOnInit(): void {
     this.getBooksList();
+    this.getCurrentUser();
+  }
+
+  getCurrentUser(){
+    this.authService.isAuth().subscribe(auth => {
+      if (auth) {
+        this.userUid = auth.uid;
+        this.authService.isUserAdmin(this.userUid).subscribe(userRole => {
+          this.isAdmin = Object.assign({}, userRole.roles).hasOwnProperty('administrador');
+        })
+      }
+    })
   }
 
   getBooksList(){

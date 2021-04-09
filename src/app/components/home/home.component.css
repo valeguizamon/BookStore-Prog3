@@ -11,7 +11,6 @@
   }
   .card_book {
     position: relative;
-    /* -webkit-transform: rotateY(0deg); */
     z-index: 2;
     margin-bottom: 30px;
   }
@@ -28,12 +27,6 @@
   .card-title {
     color: #007bff;
     cursor: pointer;
-  }
-  
-  .card_book .card .card-body img {
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
   }
   
   div.container-precio-idioma{
